@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Apocalypse</title>
+<style>
+body {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+p {
+  color: #f00f26;
+  font-size: 22px;
+  font-family: Arial;
+  text-shadow: 0 0 3px #000000;
+}
+
+#timer {
+  position: absolute;
+    bottom: 0px;
+    right: 90px;
+}
+</style>
+</head>
+<body id="change" background="https://www.geo.tv/assets/uploads/updates/2017-09-23/159518_7385264_updates.jpg">
+<center>
+<img id="logo" src="http://i68.tinypic.com/bjbllk.png" alt="logo" ></a>
+<br /><br />
+<img id="baby" src="http://i68.tinypic.com/2cmu6ih.gif" width="455" alt="baby crying" ></a>
+<br />
+<p id= "the_end"></p> <!-- Final statements will appear here with the input data -->
+<br/>
+<img id="timer" src="https://media.giphy.com/media/xfXCJdGgMDDQ4/giphy.gif" align="right" width="150"></a>
+<script>
+var name = prompt("What is your name?"); //input from the prompt will be stored into the variable
+var born= prompt("What year were you born?");
+if (isNaN(born)) {
+  alert("Uh oh that input is not a number!"); //window will pop up stating this if entry is not a numerical value
+}
+var year= prompt("What year do you think the world will end?");
+if (isNaN(year)) {
+  alert("Uh oh that input is not a number!"); //window will pop up stating this if entry is not a numerical value
+}
+
+var age= year - born; //expected age
+
+if (year < 2018) {
+  alert("Uh oh that year passed!");
+}
+
+document.getElementById("the_end").innerHTML = ("Hello " + name + ", you were born in " + born + " and you will be <br> either " + (age - 1) + " or " + age + " years old when the world ends in " + year + "!");
+
+setTimeout(function replaceImg() {
+document.getElementById('logo').style.display = 'none'; //hiding the logo
+document.getElementById('baby').style.display = 'none'; //hiding the image of baby
+document.getElementById('timer').style.display = 'none'; //hiding image of timer
+document.getElementById('change').style.backgroundImage = 'url(http://i66.tinypic.com/4h5md2.jpg)'; //new image shows up as background
+document.getElementById('the_end').innerHTML = ("Boom.") //replaces text shown previously
+}, 8600); //after 8.6 seconds, the previous content on the document will be replaced
+
+</script>
+
+</center>
+</body>
+</html>
